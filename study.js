@@ -96,3 +96,80 @@ const multiply = calculator.multiply(10, 5);
 const division = calculator.division(10, 5);
 const squared = calculator.squared(10, 5);
 console.log(plus, minus, multiply, division, squared);
+
+//event & event handler
+const title2 = document.getElementById("title");
+const title = document.querySelector("#title");
+title.innerHTML = "Hi! From JS";
+title.style.color = "red";
+document.title = "JS control";
+console.log(title);
+
+function handleResize() {
+  console.log("I have been resized");
+}
+
+window.addEventListener("resize", handleResize);
+
+function handleClick() {
+  title.style.color = "blue";
+}
+title.addEventListener("click", handleClick);
+
+//window.addEventListener("resize", handleResize());
+//이거는 이벤트 리스너 조건(window가 resize 되었을 때)에 상관 없이 handleResize가 바로 호출됨
+
+/*
+function handleResize(event) {
+    console.log(event);
+  }
+  
+window.addEventListener("resize", handleResize);
+
+이 동작에 관해서 나중에 알아보기(링크와 같은 이번xm에 유용)
+*/
+
+//조건문
+
+const age = prompt("How old are you");
+
+if (age >= 18 && age <= 21) {
+  console.log("You can drink but you should not");
+} else if (age > 21) {
+  console.log("You can drink. go ahead!");
+} else {
+  console.log("Too young");
+}
+
+//color if문
+const title = document.querySelector("#title");
+
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
+
+function handleClick() {
+  const currentColor = title.style.color;
+  if (currentColor === BASE_COLOR) {
+    title.style.color = OTHER_COLOR;
+  } else {
+    title.style.color = BASE_COLOR;
+  }
+}
+
+function init() {
+  title.style.color = "BASE_COLOR";
+  title.addEventListener("click", handleClick);
+}
+
+init();
+
+function handleOffline() {
+  console.log("Bye Bye");
+}
+
+function handleOnline() {
+  console.log("Welcomeback");
+}
+
+window.addEventListener("offline", handleOffline);
+window.addEventListener("online", handleOnline);
