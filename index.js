@@ -23,3 +23,11 @@ function init() {
 }
 
 init();
+
+//시간
+const date = new Date();
+date;
+date.getDay();
+date.getDate();
+date.getHours();
+date.getMinutes();
