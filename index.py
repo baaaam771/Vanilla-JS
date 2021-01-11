@@ -32,3 +32,10 @@ hello = say_hello("nico", "12")
 # hello = say_hello(age="12", name="nico")
 # 많은 인자가 생기면 순서를 기억하지 못하게 된다. 그래서 keyword argument를 활용함
 print(hello)
+
+
+def plus(a, b):
+    return a+b
+
+
+plus(12, 10)
